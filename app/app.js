@@ -31,7 +31,7 @@ app.config(['$routeProvider',
 			.when('/userprofile', {
 				title: 'User Profile',
 				templateUrl: 'directives/userprofile/userprofile.html',
-				controller: 'usersCrtl'
+				controller: 'profileCrtl'
 			})
 				.when('/home', {
 					title: 'Home',

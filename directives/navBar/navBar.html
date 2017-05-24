@@ -22,9 +22,9 @@
 				<li><a href="#login"><span class="glyphicon glyphicon-log-in" > </span> Login</a></li>
 
 			</ul>
-	
+	           
 			<ul class="nav navbar-nav navbar-right" ng-show="authenticated">
-			<li ng-click="getProfile();" ng-model="login"><a ><span class="glyphicon glyphicon-user"></span> {{name}}</a></li>
+			<li ng-controller="profileCrtl" ng-model="login"><a href="#userprofile"><span class="glyphicon glyphicon-user"></span> {{name}}</a></li>
 			<li><a ng-click="logout();"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
 			</ul>

@@ -51,6 +51,10 @@ ul.simple-post-list {
 
 }
 
+.errorMessage {
+    color: red;
+}
+
 #jumbo {
 	padding: 5px;
 }

@@ -8,7 +8,7 @@ app.filter('startFrom', function() {
         return [];
     }
 });
-app.controller('usersCrtl', function ($scope, $http, $timeout) {
+app.controller('usersCrtl', function ($scope, $http, $timeout, $location, $rootScope, Data) {
     $http.get('ajax/getUsers.php').success(function(data){
         $scope.list = data;
         $scope.currentPage = 1; //current page

@@ -9,9 +9,7 @@ $app->get('/session', function() {
 });
 
 $app->post('/userProfile', function() use ($app) {
-    /*require_once 'passwordHash.php';*/
     $r = json_decode($app->request->getBody());
-    /*verifyRequiredParams(array('uid','name','email'),$r->customer);*/
     $response = array();
     $db = new DbHandler();
     $email = $r->customer->email;
@@ -77,6 +75,7 @@ $app->post('/signUp', function() use ($app) {
     $email = $r->customer->email;
     $address = $r->customer->address;
     $password = $r->customer->password;
+    $city = $r->customer->city;
     $isUserExists = $db->getOneRecord("select 1 from customers_auth where phone='$phone' or email='$email'");
     if(!$isUserExists){
         $r->customer->password = passwordHash::hash($password);

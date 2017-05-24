@@ -14,7 +14,7 @@ app.controller('authCtrl', function ($scope, $route, $rootScope, $routeParams, $
             }
         });
     };
-    $scope.signup = {email:'',password:'',name:'',phone:'',address:''};
+    $scope.signup = {email:'',password:'',name:'',phone:'',address:'',city:''};
     $scope.signUp = function (customer) {
         Data.post('signUp', {
             customer: customer
@@ -32,19 +32,4 @@ app.controller('authCtrl', function ($scope, $route, $rootScope, $routeParams, $
 			$route.reload();
         });
     }
-	$scope.getProfile = function () {
-		Data.get('session').then(function (results) {
-			if(results) {
-				Data.post('userProfile', {
-					customer: results
-				}).then(function (results) {
-				    console.log(results);
-                    $rootScope.profile = results;
-					if (results.status == "success") {
-						$location.path('userprofile');
-					}
-				});
-			}
-		});
-    };
 });

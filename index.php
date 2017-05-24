@@ -43,6 +43,7 @@
 <script src="app/data.js"></script>
 <script src="app/directives.js"></script>
 <script src="app/authCtrl.js"></script>
+    <script src="app/profileCtrl.js"></script>
 	<script src="app/usersCrtl.js"></script>
 	<script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
 <script src="directives/navBar/navBar.js"></script>
