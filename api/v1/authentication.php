@@ -8,6 +8,30 @@ $app->get('/session', function() {
     echoResponse(200, $session);
 });
 
+$app->post('/userProfile', function() use ($app) {
+    /*require_once 'passwordHash.php';*/
+    $r = json_decode($app->request->getBody());
+    /*verifyRequiredParams(array('uid','name','email'),$r->customer);*/
+    $response = array();
+    $db = new DbHandler();
+    $email = $r->customer->email;
+    $user = $db->getOneRecord("select uid,phone,address,name,password,email,created from customers_auth where phone='$email' or email='$email'");
+    if ($user != NULL) {
+        $response['status'] = "success";
+        $response['message'] = 'Logged in successfully.';
+        $response['name'] = $user['name'];
+        $response['uid'] = $user['uid'];
+        $response['email'] = $user['email'];
+        $response['createdAt'] = $user['created'];
+		$response['phone'] = $user['phone'];
+		$response['address'] = $user['address'];
+    }else {
+            $response['status'] = "error";
+            $response['message'] = 'No user is logged in';
+        }
+    echoResponse(200, $response);
+});
+
 $app->post('/login', function() use ($app) {
     require_once 'passwordHash.php';
     $r = json_decode($app->request->getBody());

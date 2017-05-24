@@ -3,7 +3,7 @@
 				<div class="navbar-header">
 					<a href="#" class="navbar-brand" ng-click="page='home'">BookMyStationery</a>
 				</div>
-
+				<li ng-if="authenticated" ng-click="listUser();"><a href="#listuser">UserList</a></li>
 			</ul>
 
 			<div class="col-sm-3 col-md-3 pull-right">
@@ -24,7 +24,7 @@
 			</ul>
 	
 			<ul class="nav navbar-nav navbar-right" ng-show="authenticated">
-			<li  ><a ><span class="glyphicon glyphicon-user"></span> Logged in as, {{name}}</a></li>
+			<li ng-click="getProfile();" ng-model="login"><a ><span class="glyphicon glyphicon-user"></span> {{name}}</a></li>
 			<li><a ng-click="logout();"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
 			</ul>

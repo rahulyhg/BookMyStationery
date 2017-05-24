@@ -27,8 +27,8 @@
 		<div class="jumbotron" id="jumbo">	
 		<div data-ng-view="" id="ng-view" class="slide-animation"></div>
 		</div>
-		<div class="panel panel-default">
-			<div class="panel-body">&copy; BookMyStationery</div>
+		<div class="panel panel-default" id="panel">
+			<div class="panel-body" id="panel-body">&copy; BookMyStationery</div>
 		</div>
 	</div>
 </body>
@@ -43,6 +43,8 @@
 <script src="app/data.js"></script>
 <script src="app/directives.js"></script>
 <script src="app/authCtrl.js"></script>
+	<script src="app/usersCrtl.js"></script>
+	<script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
 <script src="directives/navBar/navBar.js"></script>
 
 </html>

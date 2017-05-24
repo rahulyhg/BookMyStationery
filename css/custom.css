@@ -40,7 +40,7 @@ ul.simple-post-list {
 .form-group-addon{
 	padding-left: -20px;
 }
-.panel .panel-body{
+#panel #panel-body{
 	
 	text-align:center;
 	background-color:#222; 
@@ -80,7 +80,7 @@ ul.simple-post-list {
   font-weight: 200;
   background-color: #222;
   width: 350px;
-  height: 600px;
+  height: 700px;
   color: #e1ffff;
 	border-radius: 5px;
 }
@@ -212,4 +212,39 @@ ul.simple-post-list {
   .nav-side-menu .menu-list .menu-content {
     display: block;
   }
+}
+
+
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+.toppad
+{margin-top:20px;
 }
