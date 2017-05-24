@@ -15,7 +15,7 @@ $app->post('/userProfile', function() use ($app) {
     $response = array();
     $db = new DbHandler();
     $email = $r->customer->email;
-    $user = $db->getOneRecord("select uid,phone,address,name,password,email,created from customers_auth where phone='$email' or email='$email'");
+    $user = $db->getOneRecord("select uid,phone,city,address,name,password,email,created from customers_auth where phone='$email' or email='$email'");
     if ($user != NULL) {
         $response['status'] = "success";
         $response['message'] = 'Logged in successfully.';
@@ -25,6 +25,7 @@ $app->post('/userProfile', function() use ($app) {
         $response['createdAt'] = $user['created'];
 		$response['phone'] = $user['phone'];
 		$response['address'] = $user['address'];
+		$response['city'] = $user['city'];
     }else {
             $response['status'] = "error";
             $response['message'] = 'No user is logged in';
