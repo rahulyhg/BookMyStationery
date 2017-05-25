@@ -8,10 +8,34 @@
                     <br/>
                     <form name="signupForm" class="form-horizontal" role="form">
                         <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="fname">First Name</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="First Name" ng-model="signup.fname" required focus/>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="lname">Last Name</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Last Name" ng-model="signup.lname" required/>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="gender">Gender</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Gender" ng-model="signup.gender" required/>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-5 control-label no-padding-right" for="email">Email</label>
                             <div class="col-sm-7">
                                 <span class="block input-icon input-icon-right">
-                                        <input type="email" class="form-control" placeholder="Email" name="email" ng-model="signup.email" focus/>
+                                        <input type="email" class="form-control" placeholder="Email" name="email" ng-model="signup.email" required/>
                                         <span ng-show="signupForm.email.$error.email" class="help-inline">Email is not valid</span>
                                 </span>
                             </div>
@@ -30,7 +54,7 @@
                             <label class="col-sm-5 control-label no-padding-right" for="password2">Confirm Password</label>
                             <div class="col-sm-7">
                                 <span class="block input-icon input-icon-right">
-                                <input type="password" class="form-control" name="password2" placeholder="Password Again" ng-model="signup.password2" password-match="signup.password" required/>                                
+                                <input type="password" class="form-control" name="password2" placeholder="Password Again" ng-model="signup.password2" password-match="signup.password" required/>
                                 <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.required"> Enter password again.</small>
 
                                <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.passwordNoMatch && !signupForm.password2.$error.required"> Password do not match.</small>
@@ -38,14 +62,7 @@
                             </span>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-5 control-label no-padding-right" for="name">Name</label>
-                            <div class="col-sm-7">
-                                <span class="block input-icon input-icon-right">
-                                <input type="text" class="form-control" placeholder="Name" ng-model="signup.name" />
-                            </span>
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <label class="col-sm-5 control-label no-padding-right" for="phone">Phone</label>
                             <div class="col-sm-7">
@@ -58,10 +75,18 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="state">State</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="State" ng-model="signup.state" required />
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-5 control-label no-padding-right" for="city">City</label>
                             <div class="col-sm-7">
                                 <span class="block input-icon input-icon-right">
-                                <input type="text" class="form-control" placeholder="City" ng-model="signup.city" />
+                                <input type="text" class="form-control" placeholder="City" ng-model="signup.city" required />
                             </span>
                             </div>
                         </div>
@@ -70,7 +95,7 @@
                             <label class="col-sm-5 control-label no-padding-right" for="address">Address</label>
                             <div class="col-sm-7">
                                 <span class="block input-icon input-icon-right">
-                                <input type="text" class="form-control" placeholder="Address" ng-model="signup.address" />
+                                <input type="text" class="form-control" placeholder="Address" ng-model="signup.address"  required/>
                             </span>
                             </div>
                         </div>
@@ -78,8 +103,8 @@
                             <span class="lbl col-sm-5"> </span>
                             <div class="col-sm-7">
                                 <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="signUp(signup)" data-ng-disabled="signupForm.$invalid">
-                                        Sign Up
-                                    </button>
+                                    Sign Up
+                                </button>
                             </div>
                         </div>
                         </fieldset>

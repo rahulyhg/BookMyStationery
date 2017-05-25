@@ -1,10 +1,12 @@
 <div class="panel panel-info" ng-controller="authCtrl as a">
             <div class="panel-heading">
-              <h3 class="panel-title">{{profile.name}}</h3>
+              <h3 class="panel-title">{{profile.fname}} {{profile.lname}}</h3>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://s-media-cache-ak0.pinimg.com/736x/98/1e/ce/981eceb633f4d3a7c7d086792efc988b--cartoon-boy-cartoon-people.jpg" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img ng-if="profile.gender=='Male'" alt="User Pic" src="https://s-media-cache-ak0.pinimg.com/736x/98/1e/ce/981eceb633f4d3a7c7d086792efc988b--cartoon-boy-cartoon-people.jpg" class="img-circle img-responsive">
+                    <img ng-if="profile.gender=='Female'" alt="User Pic" src="https://s-media-cache-ak0.pinimg.com/736x/52/94/84/52948454cc81c843e9c8acade753fdca.jpg" class="img-circle img-responsive">
+                </div>
                 
                 <div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                   <dl>
@@ -37,7 +39,11 @@
                          <tr>
                              <tr>
                         <td>Gender</td>
-                        <td>Male</td>
+                        <td>{{profile.gender}}</td>
+                      </tr>
+                      <tr>
+                          <td>State:</td>
+                          <td>{{profile.state}}</td>
                       </tr>
                       <tr>
                           <td>City</td>
@@ -48,13 +54,11 @@
                         <td>Address</td>
                         <td>{{profile.address}}</td>
                       </tr>
-
-                     
                     </tbody>
                   </table>
                   
-                  <a href="#" class="btn btn-primary">My Sales Performance</a>
-                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
+                  <!--<a href="#" class="btn btn-primary">My Sales Performance</a>
+                  <a href="#" class="btn btn-primary">Team Sales Performance</a>-->
                 </div>
               </div>
             </div>

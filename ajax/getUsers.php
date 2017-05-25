@@ -1,7 +1,7 @@
 <?php
 include('../api/config.php');
 
-$query="select * from customers_auth";
+$query="select * from users";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
 $arr = array();

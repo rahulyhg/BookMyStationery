@@ -2,7 +2,7 @@ app.controller('authCtrl', function ($scope, $route, $rootScope, $routeParams, $
     //initially set those objects to null to avoid undefined error
     $scope.login = {};
 	$scope.login.email = "samipnepal@gmail.com";
-	$scope.login.password = "prasad";
+	$scope.login.password = "nepal1";
     $scope.signup = {};
     $scope.doLogin = function (customer) {
         Data.post('login', {
@@ -14,7 +14,7 @@ app.controller('authCtrl', function ($scope, $route, $rootScope, $routeParams, $
             }
         });
     };
-    $scope.signup = {email:'',password:'',name:'',phone:'',address:'',city:''};
+    $scope.signup = {email:'',password:'',fname:'',lname:'',state:'',gender:'',phone:'',address:'',city:''};
     $scope.signUp = function (customer) {
         Data.post('signUp', {
             customer: customer

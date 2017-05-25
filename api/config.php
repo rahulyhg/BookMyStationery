@@ -4,7 +4,7 @@
 $DB_HOST = 'localhost';
 $DB_USER = 'root';
 $DB_PASS = '';
-$DB_NAME = 'angularcode';
+$DB_NAME = 'bookmystationery';
 $mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 ?>
 
@@ -16,6 +16,6 @@ $mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'angularcode');
+define('DB_NAME', 'bookmystationery');
 
 ?>

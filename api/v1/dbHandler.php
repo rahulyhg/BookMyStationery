@@ -53,13 +53,13 @@ public function getSession(){
     if(isset($_SESSION['uid']))
     {
         $sess["uid"] = $_SESSION['uid'];
-        $sess["name"] = $_SESSION['name'];
+        $sess["fname"] = $_SESSION['fname'];
         $sess["email"] = $_SESSION['email'];
     }
     else
     {
         $sess["uid"] = '';
-        $sess["name"] = 'Guest';
+        $sess["fname"] = 'Guest';
         $sess["email"] = '';
     }
     return $sess;
@@ -71,7 +71,7 @@ public function destroySession(){
     if(isSet($_SESSION['uid']))
     {
         unset($_SESSION['uid']);
-        unset($_SESSION['name']);
+        unset($_SESSION['fname']);
         unset($_SESSION['email']);
         $info='info';
         if(isSet($_COOKIE[$info]))
