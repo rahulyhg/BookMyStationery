@@ -14,14 +14,14 @@ app.controller('authCtrl', function ($scope, $route, $rootScope, $routeParams, $
             }
         });
     };
-    $scope.signup = {email:'',password:'',fname:'',lname:'',state:'',gender:'',phone:'',address:'',city:''};
+    $scope.signup = {email:'samipnepal@gmail.com',password:'prasad',fname:'Yadab',lname:'Nepal',state:'Bagmati',gender:'Male',phone:'8105682996',address:'Thamel, Chhetrapati',city:'Kathmandu'};
     $scope.signUp = function (customer) {
         Data.post('signUp', {
             customer: customer
         }).then(function (results) {
             Data.toast(results);
             if (results.status == "success") {
-                $location.path('dashboard');
+                $location.path('home');
             }
         });
     };

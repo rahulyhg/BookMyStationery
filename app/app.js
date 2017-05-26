@@ -8,19 +8,9 @@ app.config(['$routeProvider',
 					templateUrl: 'directives/login/login.html',
 					controller: 'authCtrl'
 				})
-				.when('/logout', {
-					title: 'Logout',
-					templateUrl: 'partials/login.html',
-					controller: 'logoutCtrl'
-				})
 				.when('/signup', {
 					title: 'Signup',
 					templateUrl: 'directives/signup/signup.html',
-					controller: 'authCtrl'
-				})
-				.when('/dashboard', {
-					title: 'Dashboard',
-					templateUrl: 'partials/dashboard.html',
 					controller: 'authCtrl'
 				})
 			.when('/listuser', {

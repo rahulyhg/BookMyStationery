@@ -9,13 +9,14 @@ app.filter('startFrom', function() {
     }
 });
 app.controller('usersCrtl', function ($scope, $http, $timeout, $location, $rootScope, Data) {
-    $http.get('ajax/getUsers.php').success(function(data){
-        $scope.list = data;
-        $scope.currentPage = 1; //current page
-        $scope.entryLimit = 10; //max no of items to display in a page
-        $scope.filteredItems = $scope.list.length; //Initially for no filter 
-        $scope.totalItems = $scope.list.length;
-    });
+        Data.get('listUser').then(function (results) {
+            $scope.list = results;
+            $scope.currentPage = 1; //current page
+            $scope.entryLimit = 10; //max no of items to display in a page
+            $scope.filteredItems = $scope.list.length; //Initially for no filter 
+            $scope.totalItems = $scope.list.length;
+            $location.path('listuser');
+            });
     $scope.setPage = function(pageNo) {
         $scope.currentPage = pageNo;
     };
@@ -28,4 +29,9 @@ app.controller('usersCrtl', function ($scope, $http, $timeout, $location, $rootS
         $scope.predicate = predicate;
         $scope.reverse = !$scope.reverse;
     };
+    
+    $scope.getUserProfile =function(profile) {
+        $rootScope.$emit("getProfileMethod", profile.email);
+    }
+
 });
