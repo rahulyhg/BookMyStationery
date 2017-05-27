@@ -27,9 +27,6 @@
             <th>First Name&nbsp;<a ng-click="sort_by('fname');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Last Name&nbsp;<a ng-click="sort_by('lname');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Email&nbsp;<a ng-click="sort_by('email');"><i class="glyphicon glyphicon-sort"></i></a></th>
-            <th>Phone&nbsp;<a ng-click="sort_by('phone');"><i class="glyphicon glyphicon-sort"></i></a></th>
-            <th>Address&nbsp;<a ng-click="sort_by('address');"><i class="glyphicon glyphicon-sort"></i></a></th>
-            <th>City&nbsp;<a ng-click="sort_by('city');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Profile</th>
             </thead>
             <tbody>
@@ -38,9 +35,6 @@
                     <td>{{data.fname}}</td>
                     <td>{{data.lname}}</td>
                     <td>{{data.email}}</td>
-                    <td>{{data.phone}}</td>
-                    <td>{{data.address}}</td>
-                    <td>{{data.city}}</td>
                     <td><button class="btn btn-primary" ng-click="getUserProfile(data);">View</button></td>
                 </tr>
             </tbody>

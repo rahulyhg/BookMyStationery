@@ -1,23 +1,8 @@
-app.controller('profileCrtl', function ($scope, $http, $timeout, $location, $rootScope, Data) {
+app.controller('profileCrtl', function ($scope, $http, $timeout, $location, $rootScope, $route,Data) {
+    $scope.isProfileEdit = false;
     $rootScope.$on("getProfileMethod", function(event, data){
            $scope.getProfile(data);
         });
-    /*Data.get('session').then(function (results) {
-        if (results.uid) {
-            Data.post('userProfile', {
-                customer: results.email
-            }).then(function (results) {
-                $rootScope.profile = results;
-                $scope.currentProfile = $rootScope.profile.email;
-                if (results.status == "success") {
-                    $location.path('userprofile');
-                }
-            });
-        } else {
-            $location.path("/home");
-        }
-    });*/
-
     $scope.getProfile = function (profile) {
         Data.post('userProfile', {
             customer: profile
@@ -35,6 +20,16 @@ app.controller('profileCrtl', function ($scope, $http, $timeout, $location, $roo
             Data.toast(results);
             if (results.status == "info") {
                 $scope.logout();
+            }
+        });
+    }
+    
+    $scope.editProfile = function (profile) {
+        Data.post('updateProfile', {customer:profile}).then(function (results) {
+            Data.toast(results);
+            if (results.status == "success") {
+                $scope.isProfileEdit = false;
+                $route.reload();
             }
         });
     }

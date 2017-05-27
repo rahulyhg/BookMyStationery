@@ -4,12 +4,16 @@ app.controller('authCtrl', function ($scope, $route, $rootScope, $routeParams, $
 	$scope.login.email = "samipnepal@gmail.com";
 	$scope.login.password = "nepal1";
     $scope.signup = {};
+    $rootScope.isAdmin = false;
     $scope.doLogin = function (customer) {
         Data.post('login', {
             customer: customer
         }).then(function (results) {
             Data.toast(results);
             if (results.status == "success") {
+                if(results.email = 'samipnepal@gmail.com'){
+                    $rootScope.isAdmin=true;
+                }
                 $location.path('home');
             }
         });

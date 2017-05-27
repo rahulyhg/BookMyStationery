@@ -23,7 +23,7 @@ class DbHandler {
         return $result = $r;    
     }
     
-    public function executeQuery($query) {
+    public function getMultipleRecords($query) {
         $r = $this->conn->query($query) or die($this->conn->error.__LINE__);
         $arr = array();
         if($r->num_rows > 0) {
@@ -32,6 +32,11 @@ class DbHandler {
 	       }
         }
         return $arr;    
+    }
+    
+    public function updateRecord($query) {
+        $r = $this->conn->query($query) or die($this->conn->error.__LINE__);
+        return $r;    
     }
     /**
      * Creating new record

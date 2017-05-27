@@ -1,7 +1,7 @@
 
-app.filter('startFrom', function() {
+app.filter('startFrom', function($rootScope) {
     return function(input, start) {
-        if(input) {
+        if(input && $rootScope.isAdmin) {
             start = +start; //parse to int
             return input.slice(start);
         }
@@ -15,8 +15,13 @@ app.controller('usersCrtl', function ($scope, $http, $timeout, $location, $rootS
             $scope.entryLimit = 10; //max no of items to display in a page
             $scope.filteredItems = $scope.list.length; //Initially for no filter 
             $scope.totalItems = $scope.list.length;
-            $location.path('listuser');
-            });
+            if($rootScope.isAdmin){
+                $location.path('listuser');
+            } else {
+                $scope.list = {};
+                $location.path('home')
+            }
+           });
     $scope.setPage = function(pageNo) {
         $scope.currentPage = pageNo;
     };

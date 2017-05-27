@@ -35,12 +35,16 @@ app.config(['$routeProvider',
 	.run(function ($rootScope, $location, Data) {
 		$rootScope.$on("$routeChangeStart", function (event, next, current) {
 			$rootScope.authenticated = false;
+            $rootScope.isAdmin=false;
 			Data.get('session').then(function (results) {
 				if (results.uid) {
 					$rootScope.authenticated = true;
 					$rootScope.uid = results.uid;
 					$rootScope.fname = results.fname;
 					$rootScope.email = results.email;
+                    if(results.email=='samipnepal@gmail.com'){
+                        $rootScope.isAdmin=true;
+                    }
 				} else {
 					var nextUrl = next.$$route.originalPath;
 					if (nextUrl == '/signup' || nextUrl == '/login') {
