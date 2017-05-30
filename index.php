@@ -22,7 +22,7 @@
 </head>
 
 <body ng-cloak="">
-	<div class="container" id="page-content-wrapper">
+	<div id="page-content-wrapper">
 		
 		<nav-Bar></nav-Bar>
 		<div class="jumbotron" id="jumbo">	
@@ -46,6 +46,7 @@
     <script src="directives/products/products.js"></script>
 <script src="app/authCtrl.js"></script>
     <script src="app/profileCtrl.js"></script>
+<script src="app/productsCtrl.js"></script>
 	<script src="app/usersCrtl.js"></script>
 	<script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
 <script src="directives/navBar/navBar.js"></script>

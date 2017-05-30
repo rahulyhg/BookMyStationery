@@ -1,4 +1,8 @@
-
+body {
+    padding:0px;
+    margin-left: 3px;
+    max-width: 99%;
+}
 .btn-product{
 	width: 100%;
 }
@@ -59,6 +63,10 @@ ul.simple-post-list {
     color: red;
 }
 
+.thumbnail img {
+    max-height:120px;
+}
+
 #jumbo {
 	padding: 5px;
 }
@@ -87,8 +95,8 @@ ul.simple-post-list {
   font-size: 12px;
   font-weight: 200;
   background-color: #222;
-  width: 350px;
-  height: 700px;
+  width: 300px;
+  height: 800px;
   color: #e1ffff;
 	border-radius: 5px;
 }
