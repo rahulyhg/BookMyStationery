@@ -1,4 +1,21 @@
 <div class="row" ng-controller="productsCtrl">
+
+    <div class="col-md-12" id="homeSearch">
+    <div class="col-md-3 text-left "> <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
+    </div>
+        <h5>Filtered {{ filtered.length }} of {{ totalItems}} total products</h5>
+
+        <div class="dropdown text-right" >
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"  >Sort by
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu ">
+                <li><a >Price</a></li>
+                <li><a >Popularity</a></li>
+                <li><a >Product</a></li>
+            </ul>
+        </div>
+    </div>
+
     	<div class="col-md-12">
 			<div class="col-sm-6 col-md-4" ng-repeat="data in filtered = (products | filter:search | orderBy : predicate :reverse) | productsFilter:(currentPage-1)*entryLimit | limitTo:entryLimit">
 				<div class="thumbnail" >

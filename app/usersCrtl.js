@@ -26,7 +26,7 @@ app.controller('usersCrtl', function ($scope, $http, $timeout, $location, $rootS
         $scope.currentPage = pageNo;
     };
     $scope.filter = function() {
-        $timeout(function() { 
+        $timeout(function() {
             $scope.filteredItems = $scope.filtered.length;
         }, 10);
     };

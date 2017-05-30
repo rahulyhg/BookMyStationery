@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row" >
   <div class="col-sm-3">
 	
 	
-	<div class="nav-side-menu">
+	<div class="nav-side-menu" ng-controller="productsCtrl">
     <div class="brand">Brand Logo</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
@@ -16,12 +16,12 @@
                 </li>
 
                 <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> Stationery <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">CSS3 Animation</a></li>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Buttons</a></li>
+                    <li><a ng-model="search" ng-change="filter()">Pen</a></li>
+                    <li><a ng-model="search" ng-change="filter()">Pencil</a></li>
+                    <li><a ng-model="search" ng-change="filter()">Marker</a></li>
                     <li><a href="#">Tabs & Accordions</a></li>
                     <li><a href="#">Typography</a></li>
                     <li><a href="#">FontAwesome</a></li>

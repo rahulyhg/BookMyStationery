@@ -1,10 +1,3 @@
-app.filter('startFrom', function($rootScope) {
-    return function(input, start) {
-            start = +start; //parse to int
-            return input.slice(start);
-        return [];
-    }
-});
 app.controller('profileCrtl', function ($scope, $http, $timeout, $location, $rootScope, $route,Data) {
     $scope.isProfileEdit = false;
     $rootScope.$on("getProfileMethod", function(event, data){

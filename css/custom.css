@@ -3,6 +3,9 @@ body {
     margin-left: 3px;
     max-width: 99%;
 }
+#homeSearch {
+    margin-bottom: 10px;
+}
 .btn-product{
 	width: 100%;
 }
