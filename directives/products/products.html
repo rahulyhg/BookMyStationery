@@ -1,17 +1,19 @@
 <div class="row" ng-controller="productsCtrl">
 
     <div class="col-md-12" id="homeSearch">
-    <div class="col-md-3 text-left "> <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
+        <div class="col-md-3 text-left "> <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" /></div>
+        <div class="col-md-6 text-center ">
+        Showing 1-{{ filtered.length }} of {{ totalItems}} total products
     </div>
-        <h5>Filtered {{ filtered.length }} of {{ totalItems}} total products</h5>
+        
 
-        <div class="dropdown text-right" >
+        <div class="dropdown col-md-3 text-right" >
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"  >Sort by
                 <span class="caret"></span></button>
-            <ul class="dropdown-menu ">
-                <li><a >Price</a></li>
-                <li><a >Popularity</a></li>
-                <li><a >Product</a></li>
+            <ul class="dropdown-menu dropdown-menu-right ">
+                <li><a ng-click="sort_by('price');">Price</a></li>
+                <li><a ng-click="sort_by('price');">Popularity</a></li>
+                <li><a ng-click="sort_by('title');">Product</a></li>
             </ul>
         </div>
     </div>

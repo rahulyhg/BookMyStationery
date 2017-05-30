@@ -1,0 +1,85 @@
+<div class="page-content">
+    <div class="well">Add Product</div>
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <br/>
+                    <form name="signupForm" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="pname">Product Name</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Product Name" ng-model="product.pname" required focus/>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="lname">Price</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Price" ng-model="product.price" required/>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="gender">Image</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="file" class="form-control" placeholder="Image" ng-model="product.image" required/>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="category">Category</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                        <input type="email" class="form-control" placeholder="Category" name="email" ng-model="product.category" required/>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="sdesc">Short Description</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Description" name="sdesc"  ng-model="product.sdesc"  required/>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="available">Available</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Available" ng-model="product.available" required />
+                            </span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label no-padding-right" for="ddesc">Detail Description</label>
+                            <div class="col-sm-7">
+                                <span class="block input-icon input-icon-right">
+                                <textarea  class="form-control"  ng-model="signup.ddesc" required />
+                            </span>
+                            </div>
+                        </div>
+                
+                        <div class="form-group">
+                            <span class="lbl col-sm-5"> </span>
+                            <div class="col-sm-7">
+                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="signUp(signup)" data-ng-disabled="signupForm.$invalid">
+                                    Add Product
+                                </button>
+                            </div>
+                        </div>
+                        <span class="lbl col-sm-5"> </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /.page-content -->

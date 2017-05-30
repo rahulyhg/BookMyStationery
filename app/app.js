@@ -13,7 +13,7 @@ app.config(['$routeProvider',
 					templateUrl: 'directives/signup/signup.html',
 					controller: 'authCtrl'
 				})
-			.when('/listuser', {
+			     .when('/listuser', {
 				title: 'User List',
 				templateUrl: 'directives/listuser/listuser.html',
 				controller: 'usersCrtl'
@@ -23,10 +23,14 @@ app.config(['$routeProvider',
 				templateUrl: 'directives/userprofile/userprofile.html',
 				controller: 'profileCrtl'
 			})
-				.when('/home', {
+            .when('/addproduct', {
+				title: 'Add Product',
+				templateUrl: 'directives/addProduct/addProduct.html',
+				controller: 'productsCtrl'
+			})
+                .when('/home', {
 					title: 'Home',
-					templateUrl: 'directives/homepage/homepage.html',
-					role: '0'
+					templateUrl: 'directives/homepage/homepage.html'
 				})
 				.otherwise({
 					redirectTo: '/home'
@@ -44,6 +48,10 @@ app.config(['$routeProvider',
 					$rootScope.email = results.email;
                     if(results.email=='samipnepal@gmail.com'){
                         $rootScope.isAdmin=true;
+                    }
+                    var nextUrl = next.$$route.originalPath;
+					if (nextUrl == '/signup' || nextUrl == '/login') {
+                        $location.path("/home");
                     }
 				} else {
 					var nextUrl = next.$$route.originalPath;
