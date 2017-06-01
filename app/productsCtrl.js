@@ -17,7 +17,7 @@ app.controller('productsCtrl', function($scope, $timeout, $route, $rootScope, $r
         {title:'Marker',image:'https://cdn.shopify.com/s/files/1/0192/3860/products/K-70_NewSingleBlk_Lo.jpg', price:'$449.99'}
     ];
 
-    $scope.currentPage = 1; //current page
+    $scope.currentPage = 1; //current pdage
     $scope.entryLimit = 6; //max no of items to display in a page
     $scope.filteredItems = $scope.products.length; //Initially for no filter
     $scope.totalItems = $scope.products.length;
